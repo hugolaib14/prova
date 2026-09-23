@@ -1,11 +1,9 @@
-export interface musica {
-    id: number;
-    titol: string;
-    artista: string;
-    album: string;
-    durada: number;
-    descarregada: boolean;
-//hola
-
-
+export interface Musica {
+  id: number;
+  nom: string;
+  artista: string;
+  album: string;
+  durada: number;
+  descarregada: boolean;
+  genere?: string;
 }
