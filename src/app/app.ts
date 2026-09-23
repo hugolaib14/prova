@@ -62,6 +62,21 @@ arrayProductes: Producte[] = [
     disponible: false
   }
 
+  productes: Producte[] = [this.producte, this.producte2];
+
+  p1 =  new ProduceClass('Teclat', 89.99);
+  
+
+  constructor() {
+    console.log(this.producte.toString());
+    console.log(this.p1.preuAmbIva);
+    console.log(this.p1.toString());
+  }
+
+  //1. AFEGIU UN METODE A LA CLASSE PRODUCTE descripico{} que retorni un string amb nom i preu
+  //2. METODE descompte() que retorni el preu amb un 10% de descompte
+  //3. creeu un nou producte i mostreu el descompte per consola
+  //4. cerqueu la manera de mostrar el descompte amb un popup
 
 
-}
+  
