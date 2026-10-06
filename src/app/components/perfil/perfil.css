@@ -1,0 +1,17 @@
+.perfil {
+  box-sizing: border-box;
+  min-height: 166px;
+  padding: 16px;
+  border-left: 4px solid #3c82ad;
+  border-radius: 8px;
+  background: #eff3f6;
+  color: #111111;
+}
+
+.perfil h2 {
+  margin: 0.83em 0;
+}
+
+.presentacio {
+  margin-top: 1em;
+}

@@ -1,0 +1,36 @@
+:host {
+	display: block;
+	color: #111111;
+	font-family: "Times New Roman", Times, serif;
+}
+
+.main {
+	min-height: 100vh;
+	padding: 0;
+}
+
+h1 {
+	margin: 0.67em 0;
+	font-size: 2em;
+}
+
+.llista {
+	margin: 0;
+	padding: 0;
+	line-height: 1.5;
+}
+
+.sense-numeracio {
+	list-style: none;
+}
+
+.numerada {
+	list-style-position: inside;
+}
+
+.perfils {
+	display: grid;
+	gap: 8px;
+	margin-top: 12px;
+	padding: 0 8px;
+}

@@ -2,9 +2,11 @@
 //CUALQUIER OBJETO de tipo producto tiene que tener estos campos
 
 export interface Producte {
-    id number;
+    id: number;
     nom: string;
     preu: number;
+    estoc: number;
+    categoria: string;
     disponible: boolean;
     descripcio?: string; //el ? indica que es opcional
 }

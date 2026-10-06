@@ -1,0 +1,16 @@
+.tarjeta {
+  box-sizing: border-box;
+  padding: 16px;
+  border-left: 4px solid #3c82ad;
+  border-radius: 8px;
+  background: #eff3f6;
+  color: #111111;
+}
+
+.tarjeta h2 {
+  margin: 0 0 0.83em;
+}
+
+.tarjeta p {
+  margin: 0.75em 0;
+}

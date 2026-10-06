@@ -1,90 +1,102 @@
 import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { Producte } from './interfaces/producte'; //PER PODER UTILITZAR LA INTERFICIE PRODUCTE HEM DE FER UN IMPORT
+import { Producte } from './interfaces/producte';
 import { Musica } from './interfaces/musica';
 import { esMajorEdat, saludar, sumarArray } from './funcions';
+import { Perfil } from './components/perfil/perfil';
+import { Producte as ProducteClasse } from '../producte2';
 
+@Component({
+  selector: 'app-root',
+  imports: [Perfil, RouterOutlet],
+  templateUrl: './app.html',
+  styleUrl: './app.css'
+})
+export class App {
+  protected readonly title = signal('angular-entorns-2627');
 
+  ciutats: string[] = ['Barcelona', 'Madrid', 'Girona', 'Tarragona'];
 
-//OBJECTIU DE LA SESION 2: Ver la diferencia entre JS y TS ---> TS = JS  Tipus
-//ELS TIPUS no canvien com funciona el codi, pero ens ajuden a detectar errors abans de que s'executi el codi.
-//"undefined is not a function" ----> AIXO ES EL QUE VOLEM EVITAR!!!!!!!!!!!!!!!!!!!!!!
+  nom: string = 'Angular';
+  nom2: string = 'Laravel';
+  versio: number = 20;
+  actiu: boolean = true;
+  colors: string[] = ['vermell', 'verd', 'blau'];
+  frameworks: string[] = [this.nom, this.nom2];
+  punts: number[] = [10, 15, 20];
+  ciutat: string = 'Lleida';
+  codiP: number = 25001;
 
-
-/*function saluda (nom) {
-  return nom.toUpperCase();
-}
-
-*/
-
-
-//Tipus BASICS
-nom: string = 'Angular';
-nom2: string = 'Laravel';
-versio: number = 20;
-actiu: boolean = true;
-
-//ARRAYS TIPATS
-colors: string[] = ['vermell', 'verd', 'blau'];
-frameworks: string[] = [this.nom , this.nom2];
-punts : number[] = [10, 15, 20];
-
-ciutat: string = 'Lleida';
-codiP: number = 25001; 
-
-producte: Producte = {
-  id: 1,
-  nom: 'Camiseta', 
-  preu: 20.99,
-  disponible: true,
-  descripcio: 'Camiseta de cotó'
-}
-
-arrayProductes: Producte[] = [
-  {
+  producte: Producte = {
     id: 1,
-    nom: 'Camiseta', 
+    nom: 'Camiseta',
     preu: 20.99,
+    estoc: 20,
+    categoria: 'roba',
     disponible: true,
     descripcio: 'Camiseta de cotó'
   };
-
+  arrayProductes: Producte[] = [this.producte];
   producte2: Producte = {
     id: 2,
     nom: 'Ivan',
     preu: 5,
+    estoc: 0,
+    categoria: 'altres',
     disponible: false
-  }
-
-  productes: Producte[] = [this.producte, this.producte2];
-
-  p1 =  new ProduceClass('Teclat', 89.99);
-  
+  };
+//<!-- crea un array de minim 5 elements al app.ts
+//usa @for per mostrar els elements de l'array
+//$index per mostrar l'ordre
+//-->
+  productes: Producte[] = [
+    {
+      id: 1,
+      nom: 'teclat',
+      preu: 89.99,
+      estoc: 12,
+      categoria: 'periferics',
+      disponible: true
+    },
+    {
+      id: 2,
+      nom: 'monitor',
+      preu: 179.99,
+      estoc: 8,
+      categoria: 'periferics',
+      disponible: true
+    },
+    {
+      id: 3,
+      nom: 'ratolí',
+      preu: 24.99,
+      estoc: 67,
+      categoria: 'perifèrics',
+      disponible: true
+    },
+    {
+      id: 4,
+      nom: 'ordenador',
+      preu: 399.99,
+      estoc: 7,
+      categoria: 'dispositivo',
+      disponible: true
+    },
+    {
+      id: 5,
+      nom: 'webcam',
+      preu: 39.99,
+      estoc: 10,
+      categoria: 'periferics',
+      disponible: true
+    }
+  ];
+  p1 = new ProducteClasse('Teclat', 89.99);
 
   constructor() {
-    console.log(this.producte.toString());
-    console.log(this.p1.preuAmbIva);
+    console.log(this.producte);
+    console.log(this.p1.preuIva);
     console.log(this.p1.toString());
-  }
-
-  //1. AFEGIU UN METODE A LA CLASSE PRODUCTE descripico{} que retorni un string amb nom i preu
-  //2. METODE descompte() que retorni el preu amb un 10% de descompte
-  //3. creeu un nou producte i mostreu el descompte per consola
-  //4. cerqueu la manera de mostrar el descompte amb un popup
-  
-
-  //PARTE B DEL EJERCICIO
-@Component({
-  selector: 'app-root',
-  imports: [RouterOutlet],
-  templateUrl: './app.html',
-  styleUrl: './app.css'
-})
-
-export class App {
-  protected readonly title = signal('angular-entorns-2627');
-
-  constructor() {
     console.log(saludar('món'));
     console.log(esMajorEdat(18));
     console.log(sumarArray([1, 2, 3, 4, 5]));
@@ -151,9 +163,6 @@ export class App {
   }
 }
 
-
-//PAARTE C
-
 export class LlistaMusica {
   nom: string;
   elements: Musica[];
@@ -180,3 +189,5 @@ export class LlistaMusica {
     return this.elements.length;
   }
 }
+
+
