@@ -18,7 +18,20 @@
     </ul>
     <ul class="llista sense-numeracio" aria-label="Productes">
       @for (producte of productes; track producte.id; let i = $index) {
-        <li>{{ i + 1 }}. {{ producte.nom }}</li>
+        <li>
+          {{ i + 1 }}. {{ producte.nom }} - {{ producte.preu }} €
+          @if (producte.preu === 0) {
+            <span> - gratuït</span>
+          } @else if (producte.preu < 20) {
+            <span> - oferta</span>
+          } @else if (producte.preu > 100) {
+            <span> - premium</span>
+          }
+
+          @if (producte.categoria === 'informàtica') {
+            <div>destacat</div>
+          }
+        </li>
       } @empty {
         <li>No hi ha productes per mostrar</li>
       }
@@ -27,6 +40,9 @@
   <section class="perfils" aria-label="Perfils">
     <app-perfil />
     <app-perfil />
+  </section>
+  <section class="tarjetes" aria-label="Tarjetes de productes">
+    <app-tarjeta [producte]="producte" [producteXif]="producte2" />
   </section>
   <router-outlet />
 </main>

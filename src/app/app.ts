@@ -4,11 +4,12 @@ import { Producte } from './interfaces/producte';
 import { Musica } from './interfaces/musica';
 import { esMajorEdat, saludar, sumarArray } from './funcions';
 import { Perfil } from './components/perfil/perfil';
+import { Tarjeta } from './components/tarjeta/tarjeta';
 import { Producte as ProducteClasse } from '../producte2';
 
 @Component({
   selector: 'app-root',
-  imports: [Perfil, RouterOutlet],
+  imports: [Perfil, Tarjeta, RouterOutlet],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
@@ -43,12 +44,13 @@ export class App {
     preu: 5,
     estoc: 0,
     categoria: 'altres',
-    disponible: false
+    disponible: false,
+    descripcio: 'Producte especial'
   };
-//<!-- crea un array de minim 5 elements al app.ts
-//usa @for per mostrar els elements de l'array
-//$index per mostrar l'ordre
-//-->
+  //<!-- crea un array de minim 5 elements al app.ts
+  //usa @for per mostrar els elements de l'array
+  //$index per mostrar l'ordre
+  //-->
   productes: Producte[] = [
     {
       id: 1,
@@ -70,7 +72,7 @@ export class App {
       id: 3,
       nom: 'ratolí',
       preu: 24.99,
-      estoc: 67,
+      estoc: 61,
       categoria: 'perifèrics',
       disponible: true
     },
@@ -89,6 +91,24 @@ export class App {
       estoc: 10,
       categoria: 'periferics',
       disponible: true
+    },
+    {
+      id: 6,
+      nom: 'Castanyes',
+      preu: 4.50,
+      estoc: 67,
+      categoria: 'comida',
+      disponible: true,
+      descripcio: 'Castanyes ben bones'
+    },
+    {
+      id: 7,
+      nom: 'Oreja de lechosa',
+      preu: 0,
+      estoc: 15,
+      categoria: 'comida',
+      disponible: true,
+      descripcio: 'Mostra gratuïta'
     }
   ];
   p1 = new ProducteClasse('Teclat', 89.99);
