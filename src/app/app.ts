@@ -9,7 +9,7 @@ import { Producte as ProducteClasse } from '../producte2';
 
 @Component({
   selector: 'app-root',
-  imports: [Perfil, Tarjeta, RouterOutlet],
+  imports: [Perfil, Tarjeta, RouterOutlet, botiga],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })

@@ -1,0 +1,12 @@
+<section class = "botiga">
+    <h1> {{title}} </h1>
+
+    <div class = "graella">
+        @for (p of productes; track p.id){
+            <article class = "fitxa" [class.destacat] 
+                <h2> {{p.nom}} </h2>
+                <p class = 'preu'> {{p.preu}} €</p>
+                <button class ="btn-compra" disabled=" {{ !teEstoc(p) }}"> Afegir al carret </button>
+            </article>
+        }
+</section>
